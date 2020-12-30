@@ -56,7 +56,7 @@ public class FirstRatings {
             System.out.println("File Not Found!");
         }
         catch (IOException e) {
-            System.out.println("IO Error!");
+            System.out.println("Failed To Read File!");
         }
         return ret;
     }
