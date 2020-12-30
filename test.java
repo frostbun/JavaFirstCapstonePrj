@@ -1,5 +1,11 @@
-public class test{
+import java.util.ArrayList;
+
+public class test {
     public static void main(String[] args){
-        System.out.println("Hello World!!!");
+        FirstRatings _main = new FirstRatings();
+        ArrayList<Movie> arr = _main.loadMovies("data/ratedmovies_short.csv");
+        for(Movie m: arr) {
+            System.out.println(m);
+        }
     }
 }
