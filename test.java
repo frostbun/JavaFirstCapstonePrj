@@ -62,7 +62,10 @@ public class test {
     public static void main(String[] args){
         System.out.println("Testing");
         FirstRatings fr = new FirstRatings();
+        MovieRunnerAverage mra = new MovieRunnerAverage();
         test _main = new test();
+
+        mra.printAverageRatings();
 
         // ArrayList<Movie> data = fr.loadMovies("data/ratedmoviesfull.csv");
         // data = _main.filterMovieBy(data, new GenresFilter(new String[]{"Comedy", }));
@@ -84,7 +87,7 @@ public class test {
         // }
         // System.out.println(directorOfMaxMovie + "\t" + maxMovie);
 
-        ArrayList<Rater> data = fr.loadRaters("data/ratings.csv");
+        // ArrayList<Rater> data = fr.loadRaters("data/ratings.csv");
         // String raterWithMaxRating = "";
         // int maxRating = 0;
         // for(Rater r: data) {
@@ -98,6 +101,6 @@ public class test {
 
         // System.out.println(_main.getRaterById(data, "193").numRatings());
         // System.out.println(_main.getRatingByMovie(data, "1798709"));
-        System.out.println(_main.getMovieByRater(data));
+        // System.out.println(_main.getMovieByRater(data));
     }
 }
