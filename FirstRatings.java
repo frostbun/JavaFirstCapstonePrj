@@ -25,7 +25,7 @@ public class FirstRatings {
             // System.out.println(current);
         }
         data.add(current);
-        //System.out.println(data);
+        // System.out.println(data);
         return data;
     }
     
@@ -61,5 +61,40 @@ public class FirstRatings {
         return ret;
     }
 
-    // public ;
+    public ArrayList<Rater> loadRaters(String filename) {
+        ArrayList<Rater> ret = new ArrayList<>();
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(filename));
+            reader.readLine();
+            String line;
+            while((line = reader.readLine()) != null) {
+                ArrayList<String> data = parseLine(line);
+                String id = data.get(0);
+                String item = data.get(1);
+                Double rating = Double.parseDouble(data.get(2));
+
+                boolean contain = false;
+                for(Rater r: ret) {
+                    if(r.getID().equals(id)) {
+                        r.addRating(item, rating);
+                        contain = true;
+                    }
+                }
+                if(!contain) {
+                    Rater r = new Rater(id);
+                    r.addRating(item, rating);
+                    ret.add(r);
+                }
+
+            }
+            reader.close();
+        }
+        catch (FileNotFoundException e) {
+            System.out.println("File Not Found!");
+        }
+        catch (IOException e) {
+            System.out.println("Failed To Read File!");
+        }
+        return ret;
+    }
 }
