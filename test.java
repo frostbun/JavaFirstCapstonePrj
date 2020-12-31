@@ -4,7 +4,7 @@ import java.util.HashSet;
 
 public class test {
  
-    private ArrayList<Movie> filterMovieBy(ArrayList<Movie> data, MovieFilter filter) {
+    private ArrayList<Movie> filterMovieBy(ArrayList<Movie> data, MovieFilterInterface filter) {
         ArrayList<Movie> ret = new ArrayList<>();
         for(Movie m: data) {
             if(filter.satisfy(m)) {
@@ -65,7 +65,8 @@ public class test {
         MovieRunnerAverage mra = new MovieRunnerAverage();
         test _main = new test();
 
-        mra.printAverageRatings();
+        mra.printAverageRatings(12);
+        // mra.getAverageRatingOneMovie("Vacation");
 
         // ArrayList<Movie> data = fr.loadMovies("data/ratedmoviesfull.csv");
         // data = _main.filterMovieBy(data, new GenresFilter(new String[]{"Comedy", }));

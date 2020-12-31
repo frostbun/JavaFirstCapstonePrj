@@ -1,4 +1,4 @@
-public class LengthFilter implements MovieFilter{
+public class LengthFilter implements MovieFilterInterface{
     private int minLength;
     private int maxLength;
 

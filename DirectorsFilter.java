@@ -1,4 +1,4 @@
-public class DirectorsFilter implements MovieFilter{
+public class DirectorsFilter implements MovieFilterInterface{
     private String[] director;
 
     public DirectorsFilter(String[] ndirector) {
