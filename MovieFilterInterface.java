@@ -1,3 +1,3 @@
 public interface MovieFilterInterface {
-    public boolean satisfy(Movie m);
+    public boolean satisfy(String id);
 }

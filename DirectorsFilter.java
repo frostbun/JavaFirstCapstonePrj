@@ -5,8 +5,8 @@ public class DirectorsFilter implements MovieFilterInterface{
         director = ndirector;
     }
 
-    public boolean satisfy(Movie m) {
-        String currDirector = m.getDirector();
+    public boolean satisfy(String id) {
+        String currDirector = MovieDatabase.getDirector(id);
         for(String eachDirector: director) {
             if(!currDirector.contains(eachDirector)) {
                 return false;

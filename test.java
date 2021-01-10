@@ -2,16 +2,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class test {
- 
-    private ArrayList<Movie> filterMovieBy(ArrayList<Movie> data, MovieFilterInterface filter) {
-        ArrayList<Movie> ret = new ArrayList<>();
-        for(Movie m: data) {
-            if(filter.satisfy(m)) {
-                ret.add(m);
-            }
-        }
-        return ret;
-    }
     
     private HashMap<String, ArrayList<Movie>> parseDataToDirectors(ArrayList<Movie> data) {
         HashMap<String, ArrayList<Movie>> ret = new HashMap<>();

@@ -7,7 +7,8 @@ public class LengthFilter implements MovieFilterInterface{
         maxLength = nmaxLength;
     }
 
-    public boolean satisfy(Movie m) {
-        return m.getMinutes() >= minLength && m.getMinutes() <= maxLength;
+    public boolean satisfy(String id) {
+        int curLength = MovieDatabase.getMinutes(id);
+        return curLength >= minLength && curLength <= maxLength;
     }
 }

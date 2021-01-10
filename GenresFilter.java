@@ -5,8 +5,8 @@ public class GenresFilter implements MovieFilterInterface{
         genre = ngenre;
     }
 
-    public boolean satisfy(Movie m) {
-        String currGenre = m.getGenres();
+    public boolean satisfy(String id) {
+        String currGenre = MovieDatabase.getGenres(id);
         for(String eachGenre: genre) {
             if(!currGenre.contains(eachGenre)) {
                 return false;
