@@ -81,7 +81,7 @@ public class FirstRatings {
                     }
                 }
                 if(!contain) {
-                    Rater r = new Rater(id);
+                    Rater r = new EfficientRater(id);
                     r.addRating(item, rating);
                     ret.add(r);
                 }
