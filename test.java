@@ -22,12 +22,9 @@ public class test {
     public static void main(String[] args){
         System.out.println("Testing");
 
-        test _main = new test();
-        FirstRatings fr = new FirstRatings();
-        MovieRunnerAverage mra = new MovieRunnerAverage();
+        MovieRunnerWithFilters mrwf = new MovieRunnerWithFilters();
 
-        mra.printAverageRatings(12);
-        // mra.getAverageRatingOneMovie("Vacation");
+        mrwf.printAverageRatings();
 
     }
 }

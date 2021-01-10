@@ -26,7 +26,7 @@ public class MovieRunnerAverage {
         // System.out.println(sr.getRaterSize());
 
         ArrayList<Rating> averageRating = sr.getAverageRatings(minimalRaters);
-        Collections.sort(averageRating, new byRatingAccending());
+        Collections.sort(averageRating, new ByRatingAccending());
         for(Rating curRating: averageRating) {
             double rank = curRating.getValue();
             String title = sr.getTitle(curRating.getItem());

@@ -76,7 +76,7 @@ public class MovieDatabase {
         return ourMovies.size();
     }
 
-    public static ArrayList<String> filterBy(MovieFilterInterface f) {
+    public static ArrayList<String> filterBy(MovieFilter f) {
         initialize();
         ArrayList<String> list = new ArrayList<String>();
         for(String id : ourMovies.keySet()) {

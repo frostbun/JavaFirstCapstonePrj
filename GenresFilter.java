@@ -1,4 +1,4 @@
-public class GenresFilter implements MovieFilterInterface{
+public class GenresFilter implements MovieFilter{
     private String[] genre;
 
     public GenresFilter(String[] ngenre) {

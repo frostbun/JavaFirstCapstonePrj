@@ -1,4 +1,4 @@
-public class DirectorsFilter implements MovieFilterInterface{
+public class DirectorsFilter implements MovieFilter{
     private String[] director;
 
     public DirectorsFilter(String[] ndirector) {
@@ -8,10 +8,10 @@ public class DirectorsFilter implements MovieFilterInterface{
     public boolean satisfy(String id) {
         String currDirector = MovieDatabase.getDirector(id);
         for(String eachDirector: director) {
-            if(!currDirector.contains(eachDirector)) {
-                return false;
+            if(currDirector.contains(eachDirector)) {
+                return true;
             }
         }
-        return true;
+        return false;
     }
 }

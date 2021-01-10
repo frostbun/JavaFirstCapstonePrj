@@ -1,8 +1,8 @@
-public class LengthFilter implements MovieFilterInterface{
+public class MinutesFilter implements MovieFilter{
     private int minLength;
     private int maxLength;
 
-    public LengthFilter(int nminLength, int nmaxLength) {
+    public MinutesFilter(int nminLength, int nmaxLength) {
         minLength = nminLength;
         maxLength = nmaxLength;
     }
