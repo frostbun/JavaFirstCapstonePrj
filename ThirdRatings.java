@@ -27,23 +27,10 @@ public class ThirdRatings {
         return 0;
     }
     
-    public ArrayList<Rating> getAverageRatings() {
+    public ArrayList<Rating> getAverageRatings(ArrayList<String> movies, int minimalRaters) {
         ArrayList<Rating> ret = new ArrayList<>();
-
-        AllFilters all = new AllFilters();
-        all.addFilter(new YearsAfterFilter(1990));
-        all.addFilter(new GenresFilter(new String[]{"Drama"}));
-        // all.addFilter(new MinutesFilter(105, 135));
-        // all.addFilter(new DirectorsFilter(new String[]{"Clint Eastwood",
-        //                                                 "Joel Coen",
-        //                                                 "Tim Burton",
-        //                                                 "Ron Howard",
-        //                                                 "Nora Ephron",
-        //                                                 "Sydney Pollack" }));
-        ArrayList<String> movies = MovieDatabase.filterBy(all);
-
         for(String id: movies) {
-            ret.add(new Rating(id, getAverageByID(id, 8)));
+            ret.add(new Rating(id, getAverageByID(id, minimalRaters)));
         }
         return ret;
     }

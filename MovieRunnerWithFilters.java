@@ -10,7 +10,19 @@ public class MovieRunnerWithFilters {
         MovieDatabase.initialize("ratedmoviesfull.csv");
         System.out.println("read data for " + MovieDatabase.size() + " movies");
         
-        ArrayList<Rating> averageRating = tr.getAverageRatings();
+        AllFilters all = new AllFilters();
+        // all.addFilter(new YearsAfterFilter(1990));
+        // all.addFilter(new GenresFilter(new String[]{"Drama"}));
+        // all.addFilter(new MinutesFilter(105, 135));
+        // all.addFilter(new DirectorsFilter(new String[]{"Clint Eastwood",
+        //                                                 "Joel Coen",
+        //                                                 "Tim Burton",
+        //                                                 "Ron Howard",
+        //                                                 "Nora Ephron",
+        //                                                 "Sydney Pollack" }));
+        ArrayList<String> movies = MovieDatabase.filterBy(all);
+
+        ArrayList<Rating> averageRating = tr.getAverageRatings(movies, 10);
         Collections.sort(averageRating, new ByRatingAccending());
 
         int count = 0;
@@ -23,5 +35,13 @@ public class MovieRunnerWithFilters {
             }
         }
         System.out.println("total " + count + " movies");
+    }
+
+    public static void main(String[] args){
+        System.out.println("Testing");
+
+        MovieRunnerWithFilters mrwf = new MovieRunnerWithFilters();
+
+        mrwf.printAverageRatings();
     }
 }
