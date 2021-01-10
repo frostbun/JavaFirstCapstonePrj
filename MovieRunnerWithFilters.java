@@ -23,7 +23,7 @@ public class MovieRunnerWithFilters {
         ArrayList<String> movies = MovieDatabase.filterBy(all);
 
         ArrayList<Rating> averageRating = tr.getAverageRatings(movies, 10);
-        Collections.sort(averageRating, new ByRatingAccending());
+        Collections.sort(averageRating);
 
         int count = 0;
         for(Rating curRating: averageRating) {
