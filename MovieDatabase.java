@@ -6,18 +6,17 @@ public class MovieDatabase {
 
     public static void initialize(String moviefile) {
         if (ourMovies == null) {
-            ourMovies = new HashMap<String,Movie>();
+            ourMovies = new HashMap<>();
             loadMovies("data/" + moviefile);
         }
     }
 
     private static void initialize() {
         if (ourMovies == null) {
-            ourMovies = new HashMap<String,Movie>();
+            ourMovies = new HashMap<>();
             loadMovies("data/ratedmoviesfull.csv");
         }
     }	
-
 	
     private static void loadMovies(String filename) {
         FirstRatings fr = new FirstRatings();
@@ -84,8 +83,6 @@ public class MovieDatabase {
                 list.add(id);
             }
         }
-        
         return list;
     }
-
 }
