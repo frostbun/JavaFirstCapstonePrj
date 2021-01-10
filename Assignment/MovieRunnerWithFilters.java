@@ -1,5 +1,10 @@
+package Assignment;
+
 import java.util.ArrayList;
 import java.util.Collections;
+import DataStructure.*;
+import Database.*;
+import Filter.*;
 
 public class MovieRunnerWithFilters {
     public void printAverageRatings() {

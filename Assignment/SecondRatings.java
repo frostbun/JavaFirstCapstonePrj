@@ -1,4 +1,7 @@
+package Assignment;
+
 import java.util.ArrayList;
+import DataStructure.*;
 
 public class SecondRatings {
     private ArrayList<Movie> myMovies;

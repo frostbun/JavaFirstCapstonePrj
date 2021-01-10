@@ -1,3 +1,5 @@
+package Filter;
+
 import java.util.ArrayList;
 
 public class AllFilters implements MovieFilter {

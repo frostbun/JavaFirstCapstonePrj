@@ -1,4 +1,8 @@
-public class MinutesFilter implements MovieFilter{
+package Filter;
+
+import Database.*;
+
+public class MinutesFilter implements MovieFilter {
     private int minLength;
     private int maxLength;
 

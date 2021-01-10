@@ -1,3 +1,7 @@
+package Filter;
+
+import Database.*;
+
 public class DirectorsFilter implements MovieFilter{
     private String[] director;
 

@@ -1,4 +1,7 @@
+package Assignment;
+
 import java.util.ArrayList;
+import DataStructure.*;
 
 public class ThirdRatings {
     private ArrayList<Rater> myRaters;

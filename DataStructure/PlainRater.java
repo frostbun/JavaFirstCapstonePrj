@@ -1,3 +1,5 @@
+package DataStructure;
+
 import java.util.ArrayList;
 
 public class PlainRater implements Rater {
