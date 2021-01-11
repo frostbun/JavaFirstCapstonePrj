@@ -1,6 +1,8 @@
-package Assignment;
+package Old;
 
 import java.util.ArrayList;
+
+import Assignment.FirstRatings;
 import DataStructure.*;
 
 public class SecondRatings {

@@ -1,4 +1,4 @@
-package Assignment;
+package Old;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -40,13 +40,5 @@ public class MovieRunnerWithFilters {
             }
         }
         System.out.println("total " + count + " movies");
-    }
-
-    public static void main(String[] args){
-        System.out.println("Testing");
-
-        MovieRunnerWithFilters mrwf = new MovieRunnerWithFilters();
-
-        mrwf.printAverageRatings();
     }
 }

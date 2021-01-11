@@ -8,17 +8,17 @@ import Assignment.*;
 public class RaterDatabase {
     private static HashMap<String,Rater> ourRaters;
      
-	public static void initialize(String moviefile) {
+	public static void initialize(String raterfile) {
         if (ourRaters == null) {
             ourRaters = new HashMap<>();
-            loadRaters("data/" + moviefile);
+            loadRaters("data/" + raterfile);
         }
     }
 
-    private static void initialize() {
+    public static void initialize() {
         if (ourRaters == null) {
             ourRaters = new HashMap<>();
-            loadRaters("data/ratedmoviesfull.csv");
+            loadRaters("data/ratings.csv");
         }
     }	
 	
@@ -28,6 +28,7 @@ public class RaterDatabase {
         for (Rater r : list) {
             ourRaters.put(r.getID(), r);
         }
+        System.out.println("read data for " + size() + " raters");
     }
      
     public static Rater getRater(String id) {
