@@ -1,9 +1,9 @@
-package Sorter;
+package sorter;
 
 import java.util.Comparator;
 
-import DataStructure.Rater;
-import Database.RaterDatabase;
+import database.RaterDatabase;
+import datastructure.Rater;
 
 public class BySimilarityDescending implements Comparator<Rater> {
     private Rater me;

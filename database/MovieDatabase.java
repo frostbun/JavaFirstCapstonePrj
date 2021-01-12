@@ -1,10 +1,11 @@
-package Database;
+package database;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import DataStructure.*;
-import Assignment.*;
-import Filter.*;
+
+import assignment.*;
+import filter.*;
+import datastructure.*;
 
 public class MovieDatabase {
     private static HashMap<String, Movie> ourMovies;

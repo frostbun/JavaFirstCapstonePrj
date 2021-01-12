@@ -1,9 +1,9 @@
-package Old;
+package old;
 
 import java.util.ArrayList;
 
-import Assignment.FirstRatings;
-import DataStructure.*;
+import assignment.FirstRatings;
+import datastructure.*;
 
 public class ThirdRatings {
     private ArrayList<Rater> myRaters;

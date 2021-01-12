@@ -1,10 +1,11 @@
-package Old;
+package old;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import DataStructure.*;
-import Database.*;
-import Filter.*;
+
+import database.*;
+import datastructure.*;
+import filter.*;
 
 public class MovieRunnerWithFilters {
     public void printAverageRatings() {

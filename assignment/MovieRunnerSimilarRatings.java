@@ -1,17 +1,17 @@
-package Assignment;
+package assignment;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 
-import DataStructure.Rater;
-import DataStructure.Rating;
-import Database.MovieDatabase;
-import Database.RaterDatabase;
-import Filter.AllFilters;
-import Filter.GenresFilter;
-import Filter.MovieFilter;
-import Sorter.BySimilarityDescending;
+import database.MovieDatabase;
+import database.RaterDatabase;
+import datastructure.Rater;
+import datastructure.Rating;
+import filter.AllFilters;
+import filter.GenresFilter;
+import filter.MovieFilter;
+import sorter.BySimilarityDescending;
 
 public class MovieRunnerSimilarRatings {
 
@@ -52,9 +52,6 @@ public class MovieRunnerSimilarRatings {
         for(int i=0; i<Math.min(numSimilarRaters, raters.size()); ++i) {
             Rater curRater = raters.get(i);
             // System.out.println(curRater.getID());
-            // if(dotProduct(RaterDatabase.getRater(id), curRater) <= 0) {
-            //     break;
-            // }
             for(String movie: curRater.getItemsRated()) {
                 if(!filter.satisfy(movie)) {
                     continue;

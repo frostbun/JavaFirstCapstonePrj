@@ -1,6 +1,6 @@
-package Filter;
+package filter;
 
-import Database.*;
+import database.*;
 
 public class GenresFilter implements MovieFilter{
     private String[] genre;

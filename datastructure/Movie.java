@@ -1,5 +1,5 @@
 // An immutable passive data object (PDO) to represent item data
-package DataStructure;
+package datastructure;
 
 public class Movie {
     private String id;

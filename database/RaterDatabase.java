@@ -1,9 +1,10 @@
-package Database;
+package database;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import DataStructure.*;
-import Assignment.*;
+
+import assignment.*;
+import datastructure.*;
 
 public class RaterDatabase {
     private static HashMap<String,Rater> ourRaters;

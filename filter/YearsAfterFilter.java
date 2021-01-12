@@ -1,6 +1,6 @@
-package Filter;
+package filter;
 
-import Database.*;
+import database.*;
 
 public class YearsAfterFilter implements MovieFilter{
     private int minYear;

@@ -1,6 +1,6 @@
-package Filter;
+package filter;
 
-import Database.*;
+import database.*;
 
 public class MinutesFilter implements MovieFilter {
     private int minLength;

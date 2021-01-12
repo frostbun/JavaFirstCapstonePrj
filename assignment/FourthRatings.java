@@ -1,9 +1,10 @@
-package Assignment;
+package assignment;
 
 import java.util.ArrayList;
-import DataStructure.*;
-import Database.*;
-import Filter.*;
+
+import database.*;
+import datastructure.*;
+import filter.*;
 
 public class FourthRatings {
     

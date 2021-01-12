@@ -1,8 +1,9 @@
-package Old;
+package old;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import DataStructure.*;
+
+import datastructure.*;
 
 public class MovieRunnerAverage {
 
