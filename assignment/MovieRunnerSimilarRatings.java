@@ -9,8 +9,11 @@ import database.RaterDatabase;
 import datastructure.Rater;
 import datastructure.Rating;
 import filter.AllFilters;
+import filter.DirectorsFilter;
 import filter.GenresFilter;
+import filter.MinutesFilter;
 import filter.MovieFilter;
+import filter.YearsAfterFilter;
 import sorter.BySimilarityDescending;
 
 public class MovieRunnerSimilarRatings {
@@ -40,8 +43,8 @@ public class MovieRunnerSimilarRatings {
     }
 
     public ArrayList<Rating> getSimilarRatings(String id,
-                                                int numSimilarRaters,
                                                 int minimalRaters,
+                                                int numSimilarRaters,
                                                 MovieFilter filter) {
         HashMap<String, Double> rating = new HashMap<>();
         HashMap<String, Integer> count = new HashMap<>();
@@ -51,12 +54,15 @@ public class MovieRunnerSimilarRatings {
 
         for(int i=0; i<Math.min(numSimilarRaters, raters.size()); ++i) {
             Rater curRater = raters.get(i);
-            // System.out.println(curRater.getID());
+            double weight = dotProduct(RaterDatabase.getRater(id), curRater);
+            if(weight <= 0) {
+                break;
+            }
             for(String movie: curRater.getItemsRated()) {
                 if(!filter.satisfy(movie)) {
                     continue;
                 }
-                double rank = curRater.getRating(movie);
+                double rank = curRater.getRating(movie) * weight;
                 if(!rating.keySet().contains(movie)) {
                     rating.put(movie, rank);
                     count.put(movie, 1);
@@ -84,12 +90,24 @@ public class MovieRunnerSimilarRatings {
         // FourthRatings fRatings = new FourthRatings("ratedmovies_short.csv", "ratings_short.csv");
         FourthRatings fRatings = new FourthRatings();
         
-        AllFilters all = new AllFilters();
-        all.addFilter(new GenresFilter(new String[]{"Action"}));
+        AllFilters allFilters = new AllFilters();
+        // allFilters.addFilter(new DirectorsFilter(new String[]{"Clint Eastwood",
+        //                                                 "J.J. Abrams",
+        //                                                 "Alfred Hitchcock",
+        //                                                 "Sydney Pollack",
+        //                                                 "David Cronenberg",
+        //                                                 "Oliver Stone",
+        //                                                 "Mike Leigh"}));    
+        allFilters.addFilter(new GenresFilter(new String[]{"Drama"}));
+        allFilters.addFilter(new MinutesFilter(80, 160));
+        // allFilters.addFilter(new YearsAfterFilter(1975));
 
-        ArrayList<Rating> similarRating = getSimilarRatings("65", 20, 5, all);
+        ArrayList<Rating> similarRating = getSimilarRatings("168", 3, 10, allFilters);
 
-        print(similarRating);
+        double rank = similarRating.get(0).getValue();
+        String title = MovieDatabase.getTitle(similarRating.get(0).getItem());
+        System.out.printf("%.2f\t%s\n", rank, title);
+        // print(similarRating);
     }
 
     public void printAverageRatings() {
