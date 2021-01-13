@@ -23,10 +23,10 @@ public class BySimilarityDescending implements Comparator<Rater> {
     }
     
     public int compare(Rater o1, Rater o2) {
-        if(o1.getID() == me.getID()) {
+        if(o1.getID().equals(me.getID())) {
             return 1;
         }
-        if(o2.getID() == me.getID()) {
+        if(o2.getID().equals(me.getID())) {
             return -1;
         }
         return Double.compare(dotProduct(o2), dotProduct(o1));

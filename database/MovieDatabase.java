@@ -30,7 +30,7 @@ public class MovieDatabase {
         for (Movie m : list) {
             ourMovies.put(m.getID(), m);
         }
-        System.out.println("read data for " + size() + " movies");
+        // System.out.println("read data for " + size() + " movies");
     }
 
     public static boolean containsID(String id) {

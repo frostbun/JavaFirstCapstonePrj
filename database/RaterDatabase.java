@@ -29,7 +29,7 @@ public class RaterDatabase {
         for (Rater r : list) {
             ourRaters.put(r.getID(), r);
         }
-        System.out.println("read data for " + size() + " raters");
+        // System.out.println("read data for " + size() + " raters");
     }
      
     public static Rater getRater(String id) {
